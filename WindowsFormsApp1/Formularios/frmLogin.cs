@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Warning);
                     txtUsuario.Focus();
-                    txtUsuario.SelectAll();
+                    txtUsuario.Select();
                 }
             }
         }
@@ -147,7 +147,6 @@ namespace WindowsFormsApp1
                                "Aviso del sistema",
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
-                txtPassword.Clear();
                 txtPassword.Focus();
             }
         }
