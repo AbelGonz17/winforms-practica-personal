@@ -121,13 +121,16 @@
   <data name="aa59d139b93dde70ff207187c9f1d8bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aa59d139b93dde70ff207187c9f1d8bd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="css3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\css3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="5070f9e7af565d1d16a3edfd7f53cd1e" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5070f9e7af565d1d16a3edfd7f53cd1e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="css3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\css3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3715894" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3715894.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gemini_Generated_Image_fyk23sfyk23sfyk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gemini_Generated_Image_fyk23sfyk23sfyk2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

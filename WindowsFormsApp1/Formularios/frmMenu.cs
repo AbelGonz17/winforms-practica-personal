@@ -19,12 +19,31 @@ namespace WindowsFormsApp1
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true; //activamos la tecla de funciones
+            this.Text = "Menu";
+
+            timer1.Enabled = true; // activamos el timer
 
         }
 
         private void frmMenu_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Escape) // si presionamos la tecla ESCAPE entonces va ejecutar la salida de la aplicacion
+            {
+                Application.Exit(); // cierra la aplicacion
+            }
 
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToShortDateString();
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
