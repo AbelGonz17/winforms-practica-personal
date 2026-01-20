@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\CircularPictureBox.cs">
+    <Compile Include="Clases\Styles\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\cnn.cs" />
-    <Compile Include="Clases\RoundedButton.cs">
+    <Compile Include="Clases\Styles\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Clases\RoundedLabel.cs">
+    <Compile Include="Clases\Styles\RoundedLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Clases\RoundedTextBox.cs">
+    <Compile Include="Clases\Styles\RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Formularios\frmLogin.cs">
