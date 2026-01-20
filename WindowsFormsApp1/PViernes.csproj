@@ -53,7 +53,7 @@
     <Compile Include="Clases\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Clases\RoundedLabel.cs">
+    <Compile Include="Clases\RoundedLabel1.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Clases\RoundedTextBox.cs">
