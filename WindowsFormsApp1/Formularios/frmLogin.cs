@@ -63,11 +63,20 @@ namespace WindowsFormsApp1
 
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
-            if(txtUsuario.Text.Trim() != string.Empty)
+            if (txtUsuario.Text.Trim() != string.Empty)
             {
-                BuscarUsuario(txtUsuario.Text.Trim());
-            }
+                bool usuarioExiste = BuscarUsuario(txtUsuario.Text.Trim());
 
+                if (!usuarioExiste)
+                {
+                    MessageBox.Show("El usuario no existe en el sistema",
+                                  "Aviso del sistema",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                    txtUsuario.Focus();
+                    txtUsuario.SelectAll();
+                }
+            }
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
@@ -94,21 +103,53 @@ namespace WindowsFormsApp1
         //EVENTOS DE LOS BOTONES
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        
         {
-            if(txtUsuario.Text.Trim() != string.Empty)
+            if (txtUsuario.Text.Trim() == string.Empty)
             {
-                if(txtPassword.Text.Trim() != string.Empty)
-                {
-                    if(txtPassword.Text.Trim() == password)
-                    {
-                        this.Hide();
-                        frmMenu frm = new frmMenu();
-                        frm.ShowDialog();
-                    }
-                }
+                MessageBox.Show("Debe ingresar un nombre de usuario",
+                               "Aviso del sistema",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Exclamation);
+                txtUsuario.Focus();
+                return;
             }
 
+            if (txtPassword.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Debe ingresar una contraseña",
+                               "Aviso del sistema",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Exclamation);
+                txtPassword.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("El usuario ingresado no existe",
+                               "Aviso del sistema",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Warning);
+                txtUsuario.Focus();
+                return;
+            }
+
+            if (txtPassword.Text.Trim() == password)
+            {
+                this.Hide();
+                frmMenu frm = new frmMenu();
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Contraseña incorrecta",
+                               "Aviso del sistema",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                txtPassword.Clear();
+                txtPassword.Focus();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -118,21 +159,26 @@ namespace WindowsFormsApp1
 
         //METODOS PERSONALIZADOS
 
-        private void BuscarUsuario(string Usurio)
+        private bool BuscarUsuario(string Usuario)
         {
-            string query = "SELECT CLAVE , SUCURSAL FROM USUARIO WHERE USERS = @A1";
+            string query = "SELECT CLAVE, SUCURSAL FROM USUARIO WHERE USERS = @A1";
 
             using (SqlConnection cxn = new SqlConnection(cnn.db))
             {
                 cxn.Open();
                 SqlCommand cmd = new SqlCommand(query, cxn);
-                cmd.Parameters.AddWithValue("@A1", Usurio);
+                cmd.Parameters.AddWithValue("@A1", Usuario);
                 SqlDataReader rdr = cmd.ExecuteReader();
 
-                if(rdr.Read())
+                if (rdr.Read())
                 {
                     password = rdr["CLAVE"].ToString();
                     cnn.miSucursal = rdr["SUCURSAL"].ToString();
+                    return true; // Usuario encontrado
+                }
+                else
+                {
+                    return false; // Usuario NO encontrado
                 }
             }
         }
