@@ -19,20 +19,13 @@ namespace WindowsFormsApp1
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            this.KeyPreview = true; //activamos la tecla de funciones
-            this.Text = "Menu";
-
-            timer1.Enabled = true; // activamos el timer
+            InicializarFormulario("Menu");
 
         }
 
         private void frmMenu_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape) // si presionamos la tecla ESCAPE entonces va ejecutar la salida de la aplicacion
-            {
-                Application.Exit(); // cierra la aplicacion
-            }
-
+            SalirConEscape(e);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,5 +38,19 @@ namespace WindowsFormsApp1
             lblFecha.Text = DateTime.Now.ToShortDateString();
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
+        private void InicializarFormulario(string titulo)
+        {
+            this.KeyPreview = true;
+            this.Text = titulo;
+            timer1.Enabled = true;
+        }
+
+        protected void SalirConEscape(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Application.Exit();
+        }
+
     }
 }

@@ -20,22 +20,16 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        string password;
+        string passwordBD;
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            this.KeyPreview = true; //activamos la tecla de funciones
-            this.Text = "Login";
-
-            timer1.Enabled = true; // activamos el timer
+            InicializarFormulario("Login");
         }
 
         private void frmLogin_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape) // si presionamos la tecla ESCAPE entonces va ejecutar la salida de la aplicacion
-            {
-                Application.Exit(); // cierra la aplicacion
-            }
+            SalirConEscape(e);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -124,7 +118,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            if (string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(passwordBD))
             {
                 MessageBox.Show("El usuario ingresado no existe",
                                "Aviso del sistema",
@@ -134,7 +128,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            if (txtPassword.Text.Trim() == password)
+            if (txtPassword.Text.Trim() == passwordBD)
             {
                 this.Hide();
                 frmMenu frm = new frmMenu();
@@ -171,7 +165,7 @@ namespace WindowsFormsApp1
 
                 if (rdr.Read())
                 {
-                    password = rdr["CLAVE"].ToString();
+                    passwordBD = rdr["CLAVE"].ToString();
                     cnn.miSucursal = rdr["SUCURSAL"].ToString();
                     return true; // Usuario encontrado
                 }
@@ -180,6 +174,19 @@ namespace WindowsFormsApp1
                     return false; // Usuario NO encontrado
                 }
             }
+        }
+
+        private void InicializarFormulario(string titulo)
+        {
+            this.KeyPreview = true;
+            this.Text = titulo;
+            timer1.Enabled = true;
+        }
+
+        protected void SalirConEscape(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Application.Exit();
         }
     }
 }

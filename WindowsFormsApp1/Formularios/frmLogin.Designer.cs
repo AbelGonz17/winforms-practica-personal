@@ -113,7 +113,7 @@
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.White;
             this.txtUsuario.BorderColor = System.Drawing.Color.Gray;
-            this.txtUsuario.BorderFocusColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtUsuario.BorderFocusColor = System.Drawing.Color.Black;
             this.txtUsuario.BorderRadius = 15;
             this.txtUsuario.BorderSize = 2;
             this.txtUsuario.Location = new System.Drawing.Point(84, 426);
@@ -122,7 +122,7 @@
             this.txtUsuario.PlaceholderText = "Digite el usuario";
             this.txtUsuario.Size = new System.Drawing.Size(359, 44);
             this.txtUsuario.TabIndex = 11;
-            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
@@ -155,7 +155,7 @@
             this.txtPassword.PlaceholderText = "Digite password";
             this.txtPassword.Size = new System.Drawing.Size(359, 44);
             this.txtPassword.TabIndex = 13;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
