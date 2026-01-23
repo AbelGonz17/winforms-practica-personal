@@ -48,7 +48,6 @@
             // 
             // piLogo
             // 
-            this.piLogo.Image = global::WindowsFormsApp1.Properties.Resources._3715894;
             this.piLogo.Location = new System.Drawing.Point(482, 279);
             this.piLogo.Name = "piLogo";
             this.piLogo.Size = new System.Drawing.Size(393, 234);
@@ -114,6 +113,7 @@
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // articuloToolStripMenuItem
             // 

@@ -30,20 +30,26 @@ namespace WindowsFormsApp1
         {
             if (e.KeyCode == Keys.Escape) // si presionamos la tecla ESCAPE entonces va ejecutar la salida de la aplicacion
             {
-                Application.Exit(); // cierra la aplicacion
+                this.Close();
             }
 
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToShortDateString();
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario frm = new frmUsuario();
+            frm.ShowDialog();
         }
     }
 }

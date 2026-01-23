@@ -105,6 +105,11 @@ namespace WindowsFormsApp1
                         this.Hide();
                         frmMenu frm = new frmMenu();
                         frm.ShowDialog();
+
+                        txtUsuario.Text = string.Empty;
+                        txtPassword.Text = string.Empty;
+                        txtUsuario.Focus();
+                        this.Show();
                     }
                 }
             }
