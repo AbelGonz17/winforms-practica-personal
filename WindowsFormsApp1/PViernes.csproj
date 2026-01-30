@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Busco.cs" />
     <Compile Include="Clases\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\cnn.cs" />
+    <Compile Include="Clases\ConvertImage.cs" />
     <Compile Include="Clases\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -59,6 +61,7 @@
     <Compile Include="Clases\RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Clases\Ruta.cs" />
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +126,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3715894.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filesave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filenew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editdelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

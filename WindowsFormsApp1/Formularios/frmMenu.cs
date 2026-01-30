@@ -21,18 +21,15 @@ namespace WindowsFormsApp1
         {
             this.KeyPreview = true; //activamos la tecla de funciones
             this.Text = "Menu";
-
-            timer1.Enabled = true; // activamos el timer
-
+          
         }
 
         private void frmMenu_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape) // si presionamos la tecla ESCAPE entonces va ejecutar la salida de la aplicacion
+            if (e.KeyCode == Keys.Escape) 
             {
                 this.Close();
             }
-
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
